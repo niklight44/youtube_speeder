@@ -1,0 +1,23 @@
+{
+  "name": "YouTube Speeder",
+  "version": "1.0",
+  "description": "A chrome extension that automatically increases YouTube video speed by a certain amount every certain interval of time.",
+  "manifest_version": 3,
+  "permissions": [
+    "tabs",
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["script.js"],
+        "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "action": {
+    "default_popup": "index.html"
+  }
+}
